@@ -56,7 +56,7 @@ const Jobs = () => {
             ) => (
               <div
                 key={`${jdUid}-${idx}`}
-                className="group group/item singleJob w-[320px] p-[20px] bg-white rounded-[12px] shadow-lg shadow-slate-300 hover:bg-gray-100"
+                className="group group/item singleJob w-[320px] p-[20px] bg-white rounded-[12px] shadow-lg shadow-slate-300 hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105"
               >
                 <div className="company flex items-center gap-2">
                   <img

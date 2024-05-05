@@ -1,6 +1,6 @@
 const Search = () => {
   return (
-    <div className="searchDiv grid gap-1 bg-greyIsh rounded-[10px] p-[3rem]">
+    <div className="searchDiv grid gap-1 bg-slate-300 rounded-[12px] p-[1rem]">
       <form action=""></form>
 
       <div className="secDiv flex items-center gap-3 justify-center">
@@ -102,7 +102,7 @@ const Search = () => {
           </select>
         </div>
 
-        <span className="text-[#000000]  cursor-pointer">Clear All</span>
+        <span className="text-[#000000]  cursor-pointer hover:text-red-500">Clear All</span>
       </div>
     </div>
   );
