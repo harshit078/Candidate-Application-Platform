@@ -20,10 +20,7 @@ const Jobs = () => {
     axios
       .post("https://api.weekday.technology/adhoc/getSampleJdJSON", requestBody)
       .then((response) => {
-        // console.log("response is ", response.data.jdList[0]);
-        // setData(response.data.jdList);
         setData((prevData) => [...prevData, ...response.data.jdList]);
-        console.log("data is ", data);
         setOffset(offset + 10);
         setHasMore(response.data.jdList.length > 0);
       })
@@ -43,19 +40,22 @@ const Jobs = () => {
       >
         <div className="jobContainer flex gap-6 justify-center flex-wrap items-center py-10">
           {data.map(
-            ({
-              jdUid,
-              logoUrl,
-              companyName,
-              jobRole,
-              location,
-              jobDetailsFromCompany,
-              minExp,
-              minJdSalary,
-              maxJdSalary,
-            }, idx) => (
+            (
+              {
+                jdUid,
+                logoUrl,
+                companyName,
+                jobRole,
+                location,
+                jobDetailsFromCompany,
+                minExp,
+                minJdSalary,
+                maxJdSalary,
+              },
+              idx
+            ) => (
               <div
-                 key={`${jdUid}-${idx}`}
+                key={`${jdUid}-${idx}`}
                 className="group group/item singleJob w-[320px] p-[20px] bg-white rounded-[12px] shadow-lg shadow-slate-300 hover:bg-gray-100"
               >
                 <div className="company flex items-center gap-2">
@@ -92,14 +92,14 @@ const Jobs = () => {
                 </p>
 
                 {minExp ? (
-          <h6 className="text-[#807e7e] font-semibold text-[12px] mb-3">
-            Minimum Experience: {minExp} years
-          </h6>
-        ) : (
-          <h6 className="text-[#807e7e] font-semibold text-[12px] mb-3">
-            No minimum experience specified
-          </h6>
-        )}
+                  <h6 className="text-[#807e7e] font-semibold text-[12px] mb-3">
+                    Minimum Experience: {minExp} years
+                  </h6>
+                ) : (
+                  <h6 className="text-[#807e7e] font-semibold text-[12px] mb-3">
+                    No minimum experience specified
+                  </h6>
+                )}
                 <button className="border-[2px] rounded-[10px] block p-[10px] w-full text-[14px] font-semibold bg-emerald-400 text-black">
                   ⚡︎Easy Apply
                 </button>
